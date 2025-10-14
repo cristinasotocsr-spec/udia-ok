@@ -1,5 +1,4 @@
 {
-  "error": "The resource you are requesting could not be found",
   "createdAt": "2025-10-03T09:55:12.577Z",
   "updatedAt": "2025-10-03T11:13:56.000Z",
   "id": "6HnXg5B62Rrim3RD",
@@ -571,6 +570,6 @@
   ],
   "tags": [],
   "github_path": "workflows/manipulación de datos entre nodos.json",
-  "github_sha": "",
-  "github_status": "new"
+  "sha": "",
+  "github_status": "different"
 }
