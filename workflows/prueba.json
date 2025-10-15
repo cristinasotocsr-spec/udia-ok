@@ -1,0 +1,49 @@
+{
+  "createdAt": "2025-10-02T10:51:52.483Z",
+  "updatedAt": "2025-10-02T10:57:36.000Z",
+  "id": "efBu8Pzdwv6f8U02",
+  "name": "PRUEBA",
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "4a359dbc-fed5-4532-a7b6-142df8f2aeda",
+      "name": "When clicking ‘Execute workflow’"
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Madrid",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "meta": null,
+  "pinData": {},
+  "versionId": "733eeba1-0da2-427c-ab8c-79ea8761d73e",
+  "triggerCount": 0,
+  "shared": [
+    {
+      "createdAt": "2025-10-02T10:51:52.487Z",
+      "updatedAt": "2025-10-02T10:51:52.487Z",
+      "role": "workflow:owner",
+      "workflowId": "efBu8Pzdwv6f8U02",
+      "projectId": "aL85WRDDRjE1DXrF"
+    }
+  ],
+  "tags": [
+    {
+      "createdAt": "2025-10-02T10:53:09.690Z",
+      "updatedAt": "2025-10-02T10:53:09.690Z",
+      "id": "RVebh7uJ40XVFDMi",
+      "name": "DESARROLLO WIN MAS PUNT❤"
+    }
+  ]
+}
