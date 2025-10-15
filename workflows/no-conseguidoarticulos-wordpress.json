@@ -1,0 +1,193 @@
+{
+  "createdAt": "2025-10-13T07:40:46.540Z",
+  "updatedAt": "2025-10-13T14:15:53.000Z",
+  "id": "RwF3ZxICOJmCGBw1",
+  "name": "** no conseguido**ARTÍCULOS WORDPRESS",
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        -64
+      ],
+      "id": "f88ec30a-640e-4ceb-bc7d-79c832e9d014",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "title": "Udia ejercicio",
+        "additionalFields": {
+          "content": "contenido del post",
+          "status": "draft",
+          "categories": "={{ 48,2 }}"
+        }
+      },
+      "type": "n8n-nodes-base.wordpress",
+      "typeVersion": 1,
+      "position": [
+        -272,
+        -64
+      ],
+      "id": "40f65ed3-9761-4e1d-9b18-ca9160b7f535",
+      "name": "Create a post",
+      "credentials": {
+        "wordpressApi": {
+          "id": "Db8q9UKGTbyRN7J1",
+          "name": "Wordpress account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://141-227-129-143.sslip.io/wp-json/wp/v2/posts/{{ $('Create a post').item.json.id }}/\n\n",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "featured_media",
+              "value": "={{ $json.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        352,
+        -64
+      ],
+      "id": "ec9533c2-115f-4636-a51c-25c5d9824f82",
+      "name": "HTTP Request2"
+    },
+    {
+      "parameters": {
+        "url": "https://udia.es/assets/udia-2.webp?utm_source=google.com&utm_medium=referral",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -64,
+        -64
+      ],
+      "id": "3cb0ce70-2afe-4d37-8e4c-90532d5213f1",
+      "name": "DESCARGO LA IMAGEN"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://141-227-129-143.sslip.io/wp-json/wp/v2/media",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "wordpressApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "content-disposition",
+              "value": "=attachment; filename={{  $json.title.rendered }}.{{ $binary.data.fileExtension }}"
+            },
+            {
+              "name": "content-type",
+              "value": "={{ $binary.data.mimeType }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "binaryData",
+        "inputDataFieldName": "data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        144,
+        -64
+      ],
+      "id": "6374a97f-d1be-41e0-9567-8775455e0cfe",
+      "name": "SUBO LA IMAGEN A WORDPRESS",
+      "credentials": {
+        "wordpressApi": {
+          "id": "Db8q9UKGTbyRN7J1",
+          "name": "Wordpress account 2"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Create a post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a post": {
+      "main": [
+        [
+          {
+            "node": "DESCARGO LA IMAGEN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DESCARGO LA IMAGEN": {
+      "main": [
+        [
+          {
+            "node": "SUBO LA IMAGEN A WORDPRESS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SUBO LA IMAGEN A WORDPRESS": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "5c56ad37-42d9-48e0-b161-cf57c004c66a",
+  "triggerCount": 0,
+  "shared": [
+    {
+      "createdAt": "2025-10-13T07:40:46.542Z",
+      "updatedAt": "2025-10-13T07:40:46.542Z",
+      "role": "workflow:owner",
+      "workflowId": "RwF3ZxICOJmCGBw1",
+      "projectId": "aL85WRDDRjE1DXrF"
+    }
+  ],
+  "tags": []
+}
