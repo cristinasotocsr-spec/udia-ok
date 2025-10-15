@@ -1,8 +1,12 @@
 {
-  "createdAt": "2025-10-13T14:18:47.892Z",
-  "updatedAt": "2025-10-15T16:55:15.000Z",
-  "id": "SZwoUSfTi4MoRdTG",
   "name": "backup workflows",
+  "path": "workflows/SZwoUSfTi4MoRdTG_backup-workflows.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/SZwoUSfTi4MoRdTG_backup-workflows.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/SZwoUSfTi4MoRdTG_backup-workflows.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/224af187777e14726f09e539f4116732528a6a5e",
+  "createdAt": "2025-10-13T14:18:47.892Z",
+  "updatedAt": "2025-10-15T17:07:16.000Z",
+  "id": "SZwoUSfTi4MoRdTG",
   "active": false,
   "isArchived": false,
   "nodes": [
@@ -92,7 +96,7 @@
           "value": "={{ $json.__repoName || $node[\"variable\"].json.repo?.name || \"udia-ok\" }}\n\n",
           "mode": "name"
         },
-        "filePath": "={{ $json.github_path }}",
+        "filePath": "={{\n  $json.github_path\n  ||\n  (\n    ($json.__repoPath || 'workflows/')\n    +\n    ($json.id || 'unknown') + '_' +\n    (\n      ($json.name || ('workflow_' + ($json.id || 'unknown')))\n        .normalize('NFD').replace(/[\\u0300-\\u036f]/g, '')\n        .replace(/[^\\w\\- ]+/g, '')\n        .trim().replace(/\\s+/g, '-')\n        .toLowerCase()\n    )\n    + '.json'\n  )\n}}\n",
         "asBinaryProperty": false,
         "additionalParameters": {
           "reference": "={{ $json.__repoBranch || 'main' }}"
@@ -286,6 +290,7 @@
     {
       "parameters": {
         "resource": "file",
+        "operation": "edit",
         "owner": {
           "__rl": true,
           "value": "={{ $json.__repoOwner || $node[\"variable\"].json.repo?.owner || \"cristinasotocsr-spec\" }}\n",
@@ -297,13 +302,8 @@
           "mode": "name"
         },
         "filePath": "={{ $json.github_path }}\n",
-        "fileContent": "={{ JSON.stringify($json, null, 2) }}",
-        "commitMessage": "={{ $json.newContent }}\n",
-        "additionalParameters": {
-          "branch": {
-            "branch": "={{ $json.__repoBranch || \"main\" }}"
-          }
-        }
+        "fileContent": "={{ $json.newContent }}",
+        "commitMessage": "=update: {{ $json.github_path }}\n"
       },
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
@@ -585,7 +585,7 @@
     "templateCredsSetupCompleted": true
   },
   "pinData": {},
-  "versionId": "1dd6bd61-72ab-4fd8-a97e-aa7b5be4920c",
+  "versionId": "852f6674-ae71-4dba-9ae8-ab946e871abe",
   "triggerCount": 1,
   "shared": [
     {
