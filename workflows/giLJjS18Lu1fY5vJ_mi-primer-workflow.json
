@@ -1,0 +1,267 @@
+{
+  "createdAt": "2025-10-02T13:20:14.260Z",
+  "updatedAt": "2025-10-02T13:47:46.000Z",
+  "id": "giLJjS18Lu1fY5vJ",
+  "name": "Mi primer workflow",
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "92a0efc4-0f90-416e-bf2d-444a4b474d97",
+              "name": "lenguage",
+              "value": "spanish",
+              "type": "string"
+            },
+            {
+              "id": "0fa4d3e3-ea9b-45ab-b0c2-a62224ef4354",
+              "name": "type",
+              "value": "article",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -576,
+        -128
+      ],
+      "id": "b1a2a78a-1dec-4c62-8e5f-3a58a7e9bf3a",
+      "name": "variables iniciales"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f6672e28-d391-4752-92c8-196d2d3d1832",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -336,
+        112
+      ],
+      "id": "53b74dd9-2b7e-4106-bbf3-4ebd9a736f51",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "92a0efc4-0f90-416e-bf2d-444a4b474d97",
+              "name": "lenguage",
+              "value": "spanish",
+              "type": "string"
+            },
+            {
+              "id": "0fa4d3e3-ea9b-45ab-b0c2-a62224ef4354",
+              "name": "type",
+              "value": "article",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -112,
+        -128
+      ],
+      "id": "8d73d9b6-a619-4291-8741-bf8a284587ac",
+      "name": "variables iniciales1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "92a0efc4-0f90-416e-bf2d-444a4b474d97",
+              "name": "lenguage",
+              "value": "spanish",
+              "type": "string"
+            },
+            {
+              "id": "0fa4d3e3-ea9b-45ab-b0c2-a62224ef4354",
+              "name": "type",
+              "value": "article",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        112,
+        -128
+      ],
+      "id": "210d3290-c936-4d3c-a743-eb733e38d65f",
+      "name": "variables iniciales2"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -336,
+        -128
+      ],
+      "id": "d6c22649-c5d4-4735-bb66-0b1f2b84daed",
+      "name": "Wait",
+      "webhookId": "ef94b2cc-0849-41c8-bbc8-0a498aef525f"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -560,
+        112
+      ],
+      "id": "eb10b55f-4925-4cd7-927f-cd3309c4ddd9",
+      "name": "Wait1",
+      "webhookId": "ef94b2cc-0849-41c8-bbc8-0a498aef525f"
+    },
+    {
+      "parameters": {
+        "public": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -784,
+        0
+      ],
+      "id": "7f55f7a4-3ee7-44a9-8b29-cde1456448d7",
+      "name": "When chat message received",
+      "webhookId": "bafd86a8-848e-4b07-b532-ff08d282c0e9"
+    }
+  ],
+  "connections": {
+    "variables iniciales": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        []
+      ]
+    },
+    "variables iniciales1": {
+      "main": [
+        [
+          {
+            "node": "variables iniciales2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "variables iniciales1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "variables iniciales2": {
+      "main": [
+        []
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "variables iniciales",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Madrid",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "meta": null,
+  "pinData": {},
+  "versionId": "5eb90290-a19a-45bb-bcca-fff6be0d7dcb",
+  "triggerCount": 1,
+  "shared": [
+    {
+      "createdAt": "2025-10-02T13:20:14.263Z",
+      "updatedAt": "2025-10-02T13:20:14.263Z",
+      "role": "workflow:owner",
+      "workflowId": "giLJjS18Lu1fY5vJ",
+      "projectId": "aL85WRDDRjE1DXrF"
+    }
+  ],
+  "tags": [],
+  "github_path": "workflows/giLJjS18Lu1fY5vJ_mi-primer-workflow.json"
+}
