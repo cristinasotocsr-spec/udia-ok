@@ -1,0 +1,165 @@
+{
+  "createdAt": "2025-10-02T13:48:13.621Z",
+  "updatedAt": "2025-10-02T19:03:23.000Z",
+  "id": "IoXOW0QFJXc9b6Kp",
+  "name": "Primer flujo sencillo",
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "news letter udia n8n",
+        "formDescription": "las ultimas noticias de n8n en tu email",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "nombre",
+              "placeholder": "aquí tu nombre",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "email",
+              "fieldType": "email",
+              "placeholder": "Tu email",
+              "requiredField": true
+            },
+            {
+              "fieldType": "html",
+              "elementName": "política de privacidad",
+              "html": "<form oninput=\"document.querySelector('#enviar').disabled = !document.querySelector('#acepto').checked;\">\n  <input type=\"checkbox\" id=\"acepto\" required>\n  <label for=\"acepto\">Acepto la <a href=\"/politica-de-privacidad\" target=\"_blank\" rel=\"noopener\">Política de Privacidad</a>.</label>\n  <br>\n  <button id=\"enviar\" type=\"submit\" disabled>Continuar</button>\n</form><!-- Your custom HTML here --->\n\n\n"
+            }
+          ]
+        },
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "a51dc68d-0a15-4dc2-a174-21f3c9f21cc3",
+      "name": "On form submission",
+      "webhookId": "de726539-2538-44d7-af46-c0e6b1b54aac"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1EV99hQ0Lg71Y0ryeUKxnrsmYEI-dU_nqdRKkurzVRVc",
+          "mode": "list",
+          "cachedResultName": "PRUEBA N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EV99hQ0Lg71Y0ryeUKxnrsmYEI-dU_nqdRKkurzVRVc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EV99hQ0Lg71Y0ryeUKxnrsmYEI-dU_nqdRKkurzVRVc/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "mail": "={{ $json.email }}",
+            "Nombre": "={{ $json.nombre }}"
+          },
+          "matchingColumns": [
+            "mail"
+          ],
+          "schema": [
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "mail",
+              "displayName": "mail",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "telefono",
+              "displayName": "telefono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        208,
+        0
+      ],
+      "id": "39b2ebaa-c7d0-4eb3-b9cf-bf41a6cd8ba8",
+      "name": "Append or update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5I3SYcfOawh6U4zW",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Madrid",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "afd0c0d4-f891-4257-aa3b-e06f1abe5945",
+  "triggerCount": 1,
+  "shared": [
+    {
+      "createdAt": "2025-10-02T13:48:13.623Z",
+      "updatedAt": "2025-10-02T13:48:13.623Z",
+      "role": "workflow:owner",
+      "workflowId": "IoXOW0QFJXc9b6Kp",
+      "projectId": "aL85WRDDRjE1DXrF"
+    }
+  ],
+  "tags": [],
+  "github_path": "workflows/IoXOW0QFJXc9b6Kp_primer-flujo-sencillo.json"
+}
