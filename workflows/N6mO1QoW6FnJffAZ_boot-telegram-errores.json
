@@ -1,8 +1,12 @@
 {
+  "name": "boot telegram errores",
+  "path": "workflows/N6mO1QoW6FnJffAZ_boot-telegram-errores.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/N6mO1QoW6FnJffAZ_boot-telegram-errores.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/N6mO1QoW6FnJffAZ_boot-telegram-errores.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/c4a3788de2f74e4f9acd0f965f1d89880d666a3e",
   "createdAt": "2025-10-03T07:27:29.278Z",
   "updatedAt": "2025-10-07T08:13:33.000Z",
   "id": "N6mO1QoW6FnJffAZ",
-  "name": "boot telegram errores",
   "active": false,
   "isArchived": false,
   "nodes": [
