@@ -1,8 +1,12 @@
 {
+  "name": "CONTROL DE ERRORES",
+  "path": "workflows/6JcK0zB0GgGwNEua_control-de-errores.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/6JcK0zB0GgGwNEua_control-de-errores.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/6JcK0zB0GgGwNEua_control-de-errores.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/6ba5e414016502a9d7ca6bbe830f22e50af20f9f",
   "createdAt": "2025-10-07T07:51:31.187Z",
   "updatedAt": "2025-10-07T08:15:28.000Z",
   "id": "6JcK0zB0GgGwNEua",
-  "name": "CONTROL DE ERRORES",
   "active": false,
   "isArchived": false,
   "nodes": [
