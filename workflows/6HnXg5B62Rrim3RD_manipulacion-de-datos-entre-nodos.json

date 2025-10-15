@@ -1,0 +1,573 @@
+{
+  "createdAt": "2025-10-03T09:55:12.577Z",
+  "updatedAt": "2025-10-03T11:13:56.000Z",
+  "id": "6HnXg5B62Rrim3RD",
+  "name": "manipulación de datos entre nodos",
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -3376,
+        336
+      ],
+      "id": "e2b6ea5b-d706-4bad-9a3f-6f95955b9136",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "url": "https://es.wired.com/feed/rss",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -2352,
+        112
+      ],
+      "id": "b241c9d8-ce53-4c5f-9fee-a9f3720fc04c",
+      "name": "RSS Read"
+    },
+    {
+      "parameters": {
+        "operation": "addToDate",
+        "magnitude": "={{ $json.isoDate }}",
+        "duration": 10,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        -1088,
+        -720
+      ],
+      "id": "ddbeb8c2-ab83-40ec-bcbd-5a7182e46a04",
+      "name": "Date & Time"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "34a4fd81-8c3d-414f-900b-bf73d84508b0",
+              "leftValue": "={{ $json.creator }}",
+              "rightValue": "Jorge",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        -1088,
+        -64
+      ],
+      "id": "3e6098e4-a5d6-4218-ad8b-0bcbf1d57d11",
+      "name": "Filter"
+    },
+    {
+      "parameters": {
+        "maxItems": 5,
+        "keep": "lastItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -1088,
+        96
+      ],
+      "id": "91945a66-120f-4c8d-b7bc-5920e4320ad7",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "compare": "allFieldsExcept",
+        "fieldsToExclude": "title",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.removeDuplicates",
+      "typeVersion": 2,
+      "position": [
+        -1088,
+        240
+      ],
+      "id": "0311f84d-80c2-427a-9038-fa37df7fc782",
+      "name": "Remove Duplicates"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "link",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -1088,
+        400
+      ],
+      "id": "4d865484-2c53-481b-ac77-6947c5b5ed55",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "link",
+              "renameField": true,
+              "outputFieldName": "enlace"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -752,
+        400
+      ],
+      "id": "63cb037f-7740-4cb5-96a3-ff688975ba73",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "url": "https://es.wired.com/feed/negocios/rss",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -2336,
+        528
+      ],
+      "id": "f36191bb-7207-4cb2-b7c0-efd130414cd7",
+      "name": "RSS Read1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -1088,
+        640
+      ],
+      "id": "a1894fa2-186d-4461-8ea8-55073b52da1f",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "keys": {
+          "key": [
+            {
+              "currentKey": "creator",
+              "newKey": "medio"
+            },
+            {
+              "currentKey": "title",
+              "newKey": "título"
+            }
+          ]
+        },
+        "additionalOptions": {}
+      },
+      "type": "n8n-nodes-base.renameKeys",
+      "typeVersion": 1,
+      "position": [
+        -752,
+        640
+      ],
+      "id": "74637048-aa9e-470f-9841-d19ac4f1f6eb",
+      "name": "Rename Keys"
+    },
+    {
+      "parameters": {
+        "sortFieldsUi": {
+          "sortField": [
+            {
+              "fieldName": "pubDate"
+            },
+            {
+              "fieldName": "medio"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.sort",
+      "typeVersion": 1,
+      "position": [
+        -464,
+        640
+      ],
+      "id": "d7b4419c-b2de-4322-86bc-79d80e67246d",
+      "name": "Sort"
+    },
+    {
+      "parameters": {
+        "fieldsToSummarize": {
+          "values": [
+            {
+              "field": "content"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.summarize",
+      "typeVersion": 1.1,
+      "position": [
+        -1088,
+        832
+      ],
+      "id": "7f149299-9dad-4e34-8dea-8ea2a786ec1b",
+      "name": "Summarize"
+    },
+    {
+      "parameters": {
+        "operation": "transparent",
+        "color": "#00FFFF",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.editImage",
+      "typeVersion": 1,
+      "position": [
+        -2048,
+        1120
+      ],
+      "id": "2e9e182b-2348-473f-b222-7156b027d743",
+      "name": "Edit Image1"
+    },
+    {
+      "parameters": {
+        "operation": "toJson",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        -1840,
+        864
+      ],
+      "id": "5ab48afa-a100-45a8-ac43-84fec83867da",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "operation": "compress",
+        "fileName": "data_rss_",
+        "binaryPropertyOutput": "=data_rss_{{ $runIndex }}.zip"
+      },
+      "type": "n8n-nodes-base.compression",
+      "typeVersion": 1.1,
+      "position": [
+        -1648,
+        864
+      ],
+      "id": "3299f965-e1d7-42e8-a9ef-dfe3c08fa2e5",
+      "name": "Compression"
+    },
+    {
+      "parameters": {
+        "binaryData": true
+      },
+      "type": "n8n-nodes-base.crypto",
+      "typeVersion": 1,
+      "position": [
+        -1648,
+        1056
+      ],
+      "id": "42dc30c0-630f-4eed-8c3f-d9c1a34af278",
+      "name": "Crypto"
+    },
+    {
+      "parameters": {
+        "operation": "extractDate",
+        "date": "={{ $json.isoDate }}",
+        "part": "week",
+        "outputFieldName": "year",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        -1088,
+        -544
+      ],
+      "id": "7497f394-8b83-4b51-bb26-7f5c6ada3671",
+      "name": "Extract part of time"
+    },
+    {
+      "parameters": {
+        "operation": "formatDate",
+        "date": "={{ $json.isoDate }}",
+        "outputFieldName": "year",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        -1088,
+        -384
+      ],
+      "id": "0144e9e7-b36c-4470-9849-6ce99c70a760",
+      "name": "Format a date"
+    },
+    {
+      "parameters": {
+        "operation": "subtractFromDate",
+        "magnitude": "={{ $json.isoDate }}",
+        "timeUnit": "years",
+        "duration": 20,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        -1088,
+        -224
+      ],
+      "id": "1fdadb7b-8733-4bc6-9f44-50998060a9bc",
+      "name": "Substract date"
+    },
+    {
+      "parameters": {
+        "url": "https://wallpapers.com/images/featured-full/aesthetic-i6mq4qq2qovsian6.jpg",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2320,
+        896
+      ],
+      "id": "7785746d-d02b-4293-afbc-f44594f95f69",
+      "name": "Getimage"
+    },
+    {
+      "parameters": {
+        "operation": "resize",
+        "height": 300,
+        "resizeOption": "percent",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.editImage",
+      "typeVersion": 1,
+      "position": [
+        -2048,
+        944
+      ],
+      "id": "64888860-3469-46f9-91d3-677f60a21d31",
+      "name": "Image format"
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "RSS Read",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "RSS Read1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Getimage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RSS Read": {
+      "main": [
+        [
+          {
+            "node": "Date & Time",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Extract part of time",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Format a date",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Substract date",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Remove Duplicates",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RSS Read1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Summarize",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Rename Keys",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rename Keys": {
+      "main": [
+        [
+          {
+            "node": "Sort",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Compression",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Crypto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract part of time": {
+      "main": [
+        []
+      ]
+    },
+    "Format a date": {
+      "main": [
+        []
+      ]
+    },
+    "Getimage": {
+      "main": [
+        [
+          {
+            "node": "Image format",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Image1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Image format": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": null,
+  "pinData": {},
+  "versionId": "61cfbfda-aea9-4493-afa7-540621bbb80c",
+  "triggerCount": 0,
+  "shared": [
+    {
+      "createdAt": "2025-10-03T09:55:12.579Z",
+      "updatedAt": "2025-10-03T09:55:12.579Z",
+      "role": "workflow:owner",
+      "workflowId": "6HnXg5B62Rrim3RD",
+      "projectId": "aL85WRDDRjE1DXrF"
+    }
+  ],
+  "tags": [],
+  "github_path": "workflows/6HnXg5B62Rrim3RD_manipulacion-de-datos-entre-nodos.json"
+}
