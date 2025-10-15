@@ -1,8 +1,12 @@
 {
+  "name": "CREACIÓN DE RAG",
+  "path": "workflows/psf5i0E5Ttkp6yeQ_creacion-de-rag.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/psf5i0E5Ttkp6yeQ_creacion-de-rag.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/psf5i0E5Ttkp6yeQ_creacion-de-rag.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/a8014284b3730296f2d85b12f7cd3b9d96624fe1",
   "createdAt": "2025-10-09T10:06:31.830Z",
   "updatedAt": "2025-10-09T11:28:44.000Z",
   "id": "psf5i0E5Ttkp6yeQ",
-  "name": "CREACIÓN DE RAG",
   "active": false,
   "isArchived": false,
   "nodes": [
