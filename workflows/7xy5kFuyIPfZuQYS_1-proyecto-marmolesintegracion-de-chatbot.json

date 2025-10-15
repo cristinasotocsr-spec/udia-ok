@@ -1,8 +1,12 @@
 {
+  "name": "1 (Proyecto marmoles).Integración de chatbot",
+  "path": "workflows/7xy5kFuyIPfZuQYS_1-proyecto-marmolesintegracion-de-chatbot.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/7xy5kFuyIPfZuQYS_1-proyecto-marmolesintegracion-de-chatbot.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/7xy5kFuyIPfZuQYS_1-proyecto-marmolesintegracion-de-chatbot.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/a69394201182a6b85187e40d50d88dd71bb0765d",
   "createdAt": "2025-10-10T16:00:46.207Z",
   "updatedAt": "2025-10-10T16:35:23.000Z",
   "id": "7xy5kFuyIPfZuQYS",
-  "name": "1 (Proyecto marmoles).Integración de chatbot",
   "active": false,
   "isArchived": false,
   "nodes": [
