@@ -1,8 +1,12 @@
 {
+  "name": "http variable",
+  "path": "workflows/SSm5iZzYfWCI8GTJ_http-variable.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/SSm5iZzYfWCI8GTJ_http-variable.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/SSm5iZzYfWCI8GTJ_http-variable.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/5f0a57c8348a3761a923da29eeb40df9f0aac09a",
   "createdAt": "2025-10-03T06:42:37.694Z",
   "updatedAt": "2025-10-03T07:26:49.000Z",
   "id": "SSm5iZzYfWCI8GTJ",
-  "name": "http variable",
   "active": false,
   "isArchived": false,
   "nodes": [
