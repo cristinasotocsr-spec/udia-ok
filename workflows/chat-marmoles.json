@@ -1,0 +1,194 @@
+{
+  "createdAt": "2025-10-10T16:39:29.951Z",
+  "updatedAt": "2025-10-10T18:57:14.000Z",
+  "id": "OLLo0JpQiIKoiGIn",
+  "name": "chat marmoles",
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "mode": "webhook",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -320,
+        -96
+      ],
+      "id": "e68ed4cc-5815-4be0-af56-22ef037465fa",
+      "name": "When chat message received",
+      "webhookId": "ebcc0322-6876-4021-bce5-582c41d5b730"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "Eres un agente muy amable que ayuda a las personas que buscan información sobre reparación de superficies \nEn la herramienta info marmoles tienes toda la información"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -112,
+        -96
+      ],
+      "id": "cd750e29-a1c5-46ba-969f-3e9701910584",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -256,
+        112
+      ],
+      "id": "02548dc0-38f7-4804-9397-2224b61fbd60",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "9SxawbUc5zt8E3c9",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -112,
+        112
+      ],
+      "id": "6e85394f-4647-48f4-9f6d-e2325d6b54f9",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolDescription": "Trabaja con tu Pinecone vector store donde tienes toda la información sobre reparación de sueprficies",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "proyecto",
+          "mode": "list",
+          "cachedResultName": "proyecto"
+        },
+        "options": {
+          "pineconeNamespace": "proyecto_rag"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        32,
+        80
+      ],
+      "id": "8398cc33-0545-44c5-9762-7fb2d441ae88",
+      "name": "Pinecone Vector Store",
+      "credentials": {
+        "pineconeApi": {
+          "id": "wC5K70L1bUf3fjBT",
+          "name": "PineconeApi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        32,
+        224
+      ],
+      "id": "238916ee-d433-402b-9d79-bcb143757603",
+      "name": "Embeddings Google Gemini",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "9SxawbUc5zt8E3c9",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Vector Store": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Google Gemini": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "cc73386e-6f37-47cc-9de0-1aa565061ad3",
+  "triggerCount": 1,
+  "shared": [
+    {
+      "createdAt": "2025-10-10T16:39:29.955Z",
+      "updatedAt": "2025-10-10T16:39:29.955Z",
+      "role": "workflow:owner",
+      "workflowId": "OLLo0JpQiIKoiGIn",
+      "projectId": "aL85WRDDRjE1DXrF"
+    }
+  ],
+  "tags": []
+}
