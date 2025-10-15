@@ -1,8 +1,12 @@
 {
+  "name": "PRUEBA",
+  "path": "workflows/efBu8Pzdwv6f8U02_prueba.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/efBu8Pzdwv6f8U02_prueba.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/efBu8Pzdwv6f8U02_prueba.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/593d704177f5b5a52b77b5da8892a12a969451ee",
   "createdAt": "2025-10-02T10:51:52.483Z",
   "updatedAt": "2025-10-02T10:57:36.000Z",
   "id": "efBu8Pzdwv6f8U02",
-  "name": "PRUEBA",
   "active": false,
   "isArchived": false,
   "nodes": [
