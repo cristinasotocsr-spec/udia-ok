@@ -1,8 +1,12 @@
 {
+  "name": "Agente IA con memoria y tools",
+  "path": "workflows/f4plOlNdvhdpah1f_agente-ia-con-memoria-y-tools.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/f4plOlNdvhdpah1f_agente-ia-con-memoria-y-tools.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/f4plOlNdvhdpah1f_agente-ia-con-memoria-y-tools.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/98572248ba112cbd5640039cc66dd1cca8b7b89d",
   "createdAt": "2025-10-07T09:23:49.087Z",
   "updatedAt": "2025-10-08T14:49:50.000Z",
   "id": "f4plOlNdvhdpah1f",
-  "name": "Agente IA con memoria y tools",
   "active": false,
   "isArchived": false,
   "nodes": [
