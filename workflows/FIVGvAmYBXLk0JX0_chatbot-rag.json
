@@ -1,8 +1,12 @@
 {
+  "name": "CHATBOT RAG",
+  "path": "workflows/FIVGvAmYBXLk0JX0_chatbot-rag.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/FIVGvAmYBXLk0JX0_chatbot-rag.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/FIVGvAmYBXLk0JX0_chatbot-rag.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/6d13e2cbbdd9c1e3222d4ccb7d68262e2a8c72cf",
   "createdAt": "2025-10-09T10:58:31.933Z",
   "updatedAt": "2025-10-09T11:42:44.000Z",
   "id": "FIVGvAmYBXLk0JX0",
-  "name": "CHATBOT RAG",
   "active": false,
   "isArchived": false,
   "nodes": [
