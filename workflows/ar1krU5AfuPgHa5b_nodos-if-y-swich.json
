@@ -1,8 +1,12 @@
 {
+  "name": "nodos if y swich",
+  "path": "workflows/ar1krU5AfuPgHa5b_nodos-if-y-swich.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/ar1krU5AfuPgHa5b_nodos-if-y-swich.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/ar1krU5AfuPgHa5b_nodos-if-y-swich.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/0e8964bcdd790133114a9967c2177add2cba9159",
   "createdAt": "2025-10-03T07:44:10.128Z",
   "updatedAt": "2025-10-03T08:15:51.000Z",
   "id": "ar1krU5AfuPgHa5b",
-  "name": "nodos if y swich",
   "active": false,
   "isArchived": false,
   "nodes": [
