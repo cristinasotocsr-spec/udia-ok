@@ -1,0 +1,111 @@
+{
+  "createdAt": "2025-10-03T11:18:07.071Z",
+  "updatedAt": "2025-10-03T11:41:50.000Z",
+  "id": "u4qOU84IcCg8Myfm",
+  "name": "Nodo funciones",
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -432,
+        0
+      ],
+      "id": "fa81c84d-6c7e-4d32-914c-8172680b7e8a",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "url": "https://www.techradar.com/rss",
+        "options": {
+          "ignoreSSL": false
+        }
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -160,
+        0
+      ],
+      "id": "b7b92c2e-708e-4dc5-b483-f87d251591db",
+      "name": "RSS Read"
+    },
+    {
+      "parameters": {
+        "jsCode": "// n8n Code node (JavaScript)\n\nreturn items.map(item => {\n  const data = item.json ?? {};\n  let image = null;\n\n  // 1) RSS <enclosure>\n  if (data.enclosure) {\n    if (Array.isArray(data.enclosure)) {\n      const first = data.enclosure.find(e => e?.url);\n      if (first?.url) image = first.url;\n    } else if (typeof data.enclosure.url === 'string') {\n      image = data.enclosure.url;\n    }\n  }\n\n  // 2) <media:content>\n  if (!image && (data['media:content']?.url || (Array.isArray(data['media:content']) && data['media:content'][0]?.url))) {\n    image = data['media:content']?.url ?? data['media:content'][0]?.url;\n  }\n\n  // 3) Primera <img ... src=\"...\"> dentro de content o content:encoded\n  if (!image) {\n    const html = (data.content || data['content:encoded'] || '').toString();\n    const m = html.match(/<img[^>]+src=[\"']([^\"']+)[\"']/i);\n    if (m) image = m[1];\n  }\n\n  // 4) URL de imagen suelta en contentSnippet (fallback rápido)\n  if (!image && typeof data.contentSnippet === 'string') {\n    const m2 = data.contentSnippet.match(/https?:\\/\\/\\S+\\.(?:jpe?g|png|gif|webp)/i);\n    if (m2) {\n      // limpia posibles cierres de paréntesis o comas al final\n      image = m2[0].replace(/[),.]*$/, '');\n    }\n  }\n\n  // Añade el campo al objeto. Si no encontró, queda en null.\n  item.json.image = image ?? null;\n\n  return item;\n});\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        384,
+        -144
+      ],
+      "id": "20e2802c-41c5-48f5-9c8d-8a3d5d857048",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "jsCode": "// n8n Code node (JavaScript)\n\nreturn items.map(item => {\n  const data = item.json ?? {};\n\n  if (data.creator) {\n    data.creator = \"Cristina Soto\";\n  }\n\n  return { json: data };\n});\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        384,
+        80
+      ],
+      "id": "3829ef16-8321-4cd4-b005-6cf05492ba4c",
+      "name": "Code 1"
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "RSS Read",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RSS Read": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Code 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": null,
+  "pinData": {},
+  "versionId": "87103548-8ed6-4716-a959-a3a1ff84af52",
+  "triggerCount": 0,
+  "shared": [
+    {
+      "createdAt": "2025-10-03T11:18:07.074Z",
+      "updatedAt": "2025-10-03T11:18:07.074Z",
+      "role": "workflow:owner",
+      "workflowId": "u4qOU84IcCg8Myfm",
+      "projectId": "aL85WRDDRjE1DXrF"
+    }
+  ],
+  "tags": [],
+  "github_path": "workflows/u4qOU84IcCg8Myfm_nodo-funciones.json"
+}
