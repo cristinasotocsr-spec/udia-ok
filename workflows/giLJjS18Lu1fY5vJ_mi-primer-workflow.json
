@@ -1,8 +1,12 @@
 {
+  "name": "Mi primer workflow",
+  "path": "workflows/giLJjS18Lu1fY5vJ_mi-primer-workflow.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/giLJjS18Lu1fY5vJ_mi-primer-workflow.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/giLJjS18Lu1fY5vJ_mi-primer-workflow.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/acf6fecbdcacb2f8177627aea33cb7c8527872bd",
   "createdAt": "2025-10-02T13:20:14.260Z",
   "updatedAt": "2025-10-02T13:47:46.000Z",
   "id": "giLJjS18Lu1fY5vJ",
-  "name": "Mi primer workflow",
   "active": false,
   "isArchived": false,
   "nodes": [
