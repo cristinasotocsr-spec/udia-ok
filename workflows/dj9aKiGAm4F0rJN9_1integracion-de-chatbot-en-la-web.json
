@@ -1,8 +1,12 @@
 {
+  "name": "1.Integración de chatbot en la web",
+  "path": "workflows/dj9aKiGAm4F0rJN9_1integracion-de-chatbot-en-la-web.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/dj9aKiGAm4F0rJN9_1integracion-de-chatbot-en-la-web.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/dj9aKiGAm4F0rJN9_1integracion-de-chatbot-en-la-web.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/fc2ff50fa42a554fe0f1be4cbbe7a08da1ba518f",
   "createdAt": "2025-10-09T11:47:43.015Z",
   "updatedAt": "2025-10-10T16:00:15.000Z",
   "id": "dj9aKiGAm4F0rJN9",
-  "name": "1.Integración de chatbot en la web",
   "active": false,
   "isArchived": false,
   "nodes": [
