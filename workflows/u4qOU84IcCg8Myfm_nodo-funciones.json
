@@ -1,8 +1,12 @@
 {
+  "name": "Nodo funciones",
+  "path": "workflows/u4qOU84IcCg8Myfm_nodo-funciones.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/u4qOU84IcCg8Myfm_nodo-funciones.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/u4qOU84IcCg8Myfm_nodo-funciones.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/d99ad047c10807f51bb1aac5261174d314d6b6de",
   "createdAt": "2025-10-03T11:18:07.071Z",
   "updatedAt": "2025-10-03T11:41:50.000Z",
   "id": "u4qOU84IcCg8Myfm",
-  "name": "Nodo funciones",
   "active": false,
   "isArchived": false,
   "nodes": [
