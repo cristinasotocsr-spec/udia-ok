@@ -1,0 +1,113 @@
+{
+  "createdAt": "2025-10-03T09:13:44.492Z",
+  "updatedAt": "2025-10-03T09:51:07.000Z",
+  "id": "BUQnPkHGmZlJJaJ3",
+  "name": "credenciales",
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "9dce4c5f-8b48-4d9f-85a6-fd0e4b8fc83b",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "resource": "base",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        176,
+        -128
+      ],
+      "id": "0d16a997-7c6a-4cc5-b2b8-669478f909d7",
+      "name": "Get many bases",
+      "alwaysOutputData": true,
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "sCzSiBTzJKWyfQvz",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-5",
+          "mode": "list",
+          "cachedResultName": "GPT-5"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "Hola, saluda a mis amiguis"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        144,
+        96
+      ],
+      "id": "7fa957d8-36bf-4392-ae9f-4e40ad0b9fef",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": "HD1usjqC91g34kh0",
+          "name": "OpenAi account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get many bases",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "15b10e4f-5224-49df-881f-9726d5f205a6",
+  "triggerCount": 0,
+  "shared": [
+    {
+      "createdAt": "2025-10-03T09:13:44.494Z",
+      "updatedAt": "2025-10-03T09:13:44.494Z",
+      "role": "workflow:owner",
+      "workflowId": "BUQnPkHGmZlJJaJ3",
+      "projectId": "aL85WRDDRjE1DXrF"
+    }
+  ],
+  "tags": [],
+  "github_path": "workflows/BUQnPkHGmZlJJaJ3_credenciales.json"
+}
