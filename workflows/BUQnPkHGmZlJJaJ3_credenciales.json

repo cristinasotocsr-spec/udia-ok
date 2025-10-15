@@ -1,8 +1,12 @@
 {
+  "name": "credenciales",
+  "path": "workflows/BUQnPkHGmZlJJaJ3_credenciales.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/BUQnPkHGmZlJJaJ3_credenciales.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/BUQnPkHGmZlJJaJ3_credenciales.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/0b2bd830684464aaaa91d0a5b53a494e68e6589a",
   "createdAt": "2025-10-03T09:13:44.492Z",
   "updatedAt": "2025-10-03T09:51:07.000Z",
   "id": "BUQnPkHGmZlJJaJ3",
-  "name": "credenciales",
   "active": false,
   "isArchived": false,
   "nodes": [
