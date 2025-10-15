@@ -1,8 +1,12 @@
 {
+  "name": "chat marmoles",
+  "path": "workflows/OLLo0JpQiIKoiGIn_chat-marmoles.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/OLLo0JpQiIKoiGIn_chat-marmoles.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/OLLo0JpQiIKoiGIn_chat-marmoles.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/ad486e9444c1e4131caf863b2484a9dc776369a8",
   "createdAt": "2025-10-10T16:39:29.951Z",
   "updatedAt": "2025-10-10T18:57:14.000Z",
   "id": "OLLo0JpQiIKoiGIn",
-  "name": "chat marmoles",
   "active": false,
   "isArchived": false,
   "nodes": [
