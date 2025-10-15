@@ -1,8 +1,12 @@
 {
+  "name": "Primer flujo sencillo",
+  "path": "workflows/IoXOW0QFJXc9b6Kp_primer-flujo-sencillo.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/IoXOW0QFJXc9b6Kp_primer-flujo-sencillo.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/IoXOW0QFJXc9b6Kp_primer-flujo-sencillo.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/3cb55eace9ec5785502ad27af54e8f4f8890583f",
   "createdAt": "2025-10-02T13:48:13.621Z",
   "updatedAt": "2025-10-02T19:03:23.000Z",
   "id": "IoXOW0QFJXc9b6Kp",
-  "name": "Primer flujo sencillo",
   "active": false,
   "isArchived": false,
   "nodes": [
