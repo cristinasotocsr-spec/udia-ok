@@ -1,8 +1,12 @@
 {
+  "name": "Agente IA introducción",
+  "path": "workflows/tuN2NZlpkx1m0TBH_agente-ia-introduccion.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/tuN2NZlpkx1m0TBH_agente-ia-introduccion.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/tuN2NZlpkx1m0TBH_agente-ia-introduccion.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/cfca11a45057a6987c6a51f70677641dbd2000c7",
   "createdAt": "2025-10-07T09:13:18.549Z",
   "updatedAt": "2025-10-07T09:23:29.000Z",
   "id": "tuN2NZlpkx1m0TBH",
-  "name": "Agente IA introducción",
   "active": false,
   "isArchived": false,
   "nodes": [
