@@ -1,8 +1,12 @@
 {
+  "name": "manipulación de datos entre nodos",
+  "path": "workflows/6HnXg5B62Rrim3RD_manipulacion-de-datos-entre-nodos.json\n",
+  "url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/contents/workflows/6HnXg5B62Rrim3RD_manipulacion-de-datos-entre-nodos.json%0A?ref=main",
+  "html_url": "https://github.com/cristinasotocsr-spec/udia-ok/blob/main/workflows/6HnXg5B62Rrim3RD_manipulacion-de-datos-entre-nodos.json%0A",
+  "git_url": "https://api.github.com/repos/cristinasotocsr-spec/udia-ok/git/blobs/0f1f73899a2592b882d78258dc82286ac2a47170",
   "createdAt": "2025-10-03T09:55:12.577Z",
   "updatedAt": "2025-10-03T11:13:56.000Z",
   "id": "6HnXg5B62Rrim3RD",
-  "name": "manipulación de datos entre nodos",
   "active": false,
   "isArchived": false,
   "nodes": [
